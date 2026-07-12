@@ -1,0 +1,95 @@
+{
+  "version": "1.0",
+  "name": "neutral-scientific",
+  "intent": "Original, publication-neutral styling for reproducible scientific figures",
+  "linux_first": true,
+  "font_family": "Noto Sans",
+  "font_fallbacks": [
+    "Liberation Sans",
+    "DejaVu Sans",
+    "Arial",
+    "sans-serif"
+  ],
+  "palette": {
+    "background": "#F6F8FB",
+    "panel_fill": "#FFFFFF",
+    "text": "#1F2933",
+    "muted_text": "#52606D",
+    "primary": "#356C9B",
+    "on_primary": "#FFFFFF",
+    "connector": "#356C9B",
+    "canvas": "#F6F8FB",
+    "surface": "#FFFFFF",
+    "ink": "#1F2933",
+    "muted_ink": "#52606D",
+    "hairline": "#B8C2CC",
+    "temporal": "#356C9B",
+    "temporal_tint": "#EAF2F8",
+    "convergence": "#A65A16",
+    "convergence_tint": "#FFF1E3",
+    "result": "#2F7355",
+    "result_tint": "#E8F4EE",
+    "branch_a_fill": "#EDF4FA",
+    "branch_a_header": "#DCEAF5",
+    "branch_b_fill": "#EEF6F3",
+    "branch_b_header": "#DCEDE7",
+    "focus": "#5B4E9A",
+    "warning": "#9A4D4D"
+  },
+  "panel_radius": 16,
+  "panel_stroke_width": 2,
+  "connector_width": 3,
+  "typography": {
+    "title_size": 32,
+    "subtitle_size": 18,
+    "panel_title_size": 19,
+    "card_title_size": 16,
+    "body_size": 14,
+    "note_size": 13,
+    "line_height": 1.3,
+    "weights": {
+      "regular": 400,
+      "medium": 500,
+      "bold": 700
+    }
+  },
+  "spacing": {
+    "base": 8,
+    "safe_margin": 64,
+    "card_padding": 16,
+    "group_gap": 32,
+    "section_gap": 80,
+    "connector_clearance": 24
+  },
+  "role_styles": {
+    "internal-temporal": {
+      "color": "#356C9B",
+      "width": 3,
+      "dash": "solid",
+      "arrowhead": "end"
+    },
+    "external-convergence": {
+      "color": "#A65A16",
+      "width": 3,
+      "dash": "dashed",
+      "arrowhead": "end"
+    },
+    "external-distribution": {
+      "color": "#52606D",
+      "width": 2,
+      "dash": "dotted",
+      "arrowhead": "end"
+    },
+    "external-result": {
+      "color": "#2F7355",
+      "width": 3,
+      "dash": "solid",
+      "arrowhead": "end"
+    }
+  },
+  "effects": {
+    "shadow": "none",
+    "gradient": "none",
+    "opacity_for_semantic_encoding": false
+  }
+}

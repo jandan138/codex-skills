@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/build-scientific-figures/figure-spec.schema.json",
+  "title": "Scientific Figure Specification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "mode", "canvas", "theme", "panels", "ports", "edges", "outputs"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "const": "1.0" },
+    "mode": { "enum": ["exact", "inspired", "original"] },
+    "title": { "type": "string" },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "type": "number", "exclusiveMinimum": 0 },
+        "height": { "type": "number", "exclusiveMinimum": 0 },
+        "background": { "$ref": "#/$defs/color" }
+      }
+    },
+    "theme": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["font_family", "palette"],
+      "properties": {
+        "font_family": { "type": "string", "minLength": 1 },
+        "font_fallbacks": { "type": "array", "items": { "type": "string" } },
+        "palette": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": { "$ref": "#/$defs/color" }
+        },
+        "panel_radius": { "type": "number", "minimum": 0 },
+        "panel_stroke_width": { "type": "number", "minimum": 0 },
+        "connector_width": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "panels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "x", "y", "width", "height", "title"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "x": { "type": "number" },
+          "y": { "type": "number" },
+          "width": { "type": "number", "exclusiveMinimum": 0 },
+          "height": { "type": "number", "exclusiveMinimum": 0 },
+          "title": { "type": "string" },
+          "subtitle": { "type": "string" },
+          "semantic_role": { "type": "string" },
+          "fill": { "$ref": "#/$defs/colorOrToken" },
+          "stroke": { "$ref": "#/$defs/colorOrToken" },
+          "stroke_width": { "type": "number", "minimum": 0 },
+          "radius": { "type": "number", "minimum": 0 },
+          "header_height": { "type": "number", "minimum": 0 },
+          "header_fill": { "$ref": "#/$defs/colorOrToken" },
+          "header_text_color": { "$ref": "#/$defs/colorOrToken" },
+          "title_font_size": { "type": "number", "exclusiveMinimum": 0 },
+          "z": { "type": "integer" }
+        }
+      }
+    },
+    "texts": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "text", "x", "y", "width", "height"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "text": { "type": "string" },
+          "x": { "type": "number" },
+          "y": { "type": "number" },
+          "width": { "type": "number", "exclusiveMinimum": 0 },
+          "height": { "type": "number", "exclusiveMinimum": 0 },
+          "font_size": { "type": "number", "exclusiveMinimum": 0 },
+          "font_weight": { "enum": ["normal", "medium", "semibold", "bold"] },
+          "color": { "$ref": "#/$defs/colorOrToken" },
+          "align": { "enum": ["left", "center", "right"] },
+          "valign": { "enum": ["top", "middle", "bottom"] },
+          "owner": { "$ref": "#/$defs/id" }
+        }
+      }
+    },
+    "ports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "x", "y", "scope"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "owner": { "$ref": "#/$defs/id" },
+          "x": { "type": "number" },
+          "y": { "type": "number" },
+          "scope": { "enum": ["internal", "external", "junction"] },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "from", "to", "scope", "meaning", "arrowhead"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "from": { "$ref": "#/$defs/id" },
+          "to": { "$ref": "#/$defs/id" },
+          "scope": { "enum": ["internal", "external"] },
+          "meaning": { "type": "string", "minLength": 1 },
+          "arrowhead": { "enum": ["none", "start", "end", "both"] },
+          "route": { "enum": ["explicit", "straight", "orthogonal"] },
+          "points": {
+            "type": "array",
+            "minItems": 2,
+            "items": { "$ref": "#/$defs/point" }
+          },
+          "color": { "$ref": "#/$defs/colorOrToken" },
+          "width": { "type": "number", "exclusiveMinimum": 0 },
+          "dash": { "enum": ["solid", "dashed", "dotted"] },
+          "corner_radius": { "type": "number", "minimum": 0 },
+          "label": { "type": "string" }
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "x", "y", "width", "height", "fit", "alt"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "path": { "type": "string" },
+          "placeholder": { "type": "boolean" },
+          "placeholder_label": { "type": "string" },
+          "x": { "type": "number" },
+          "y": { "type": "number" },
+          "width": { "type": "number", "exclusiveMinimum": 0 },
+          "height": { "type": "number", "exclusiveMinimum": 0 },
+          "fit": { "enum": ["contain", "cover", "stretch"] },
+          "clip_radius": { "type": "number", "minimum": 0 },
+          "alt": { "type": "string", "minLength": 1 },
+          "owner": { "$ref": "#/$defs/id" }
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formats"],
+      "properties": {
+        "formats": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": { "enum": ["svg", "png", "pdf", "pptx"] }
+        },
+        "basename": { "type": "string", "pattern": "^[A-Za-z0-9._-]+$" }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "semantic_graph_approved": { "type": "boolean" },
+        "approved_by": { "type": "string" },
+        "approved_at": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "source", "status"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "source": { "type": "string", "minLength": 1 },
+          "page": { "type": ["integer", "string"] },
+          "section": { "type": "string" },
+          "claim": { "type": "string" },
+          "applies_to": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+          "status": { "enum": ["verified", "user-provided", "inferred", "unverified"] }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._-]*$" },
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": { "x": { "type": "number" }, "y": { "type": "number" } }
+    },
+    "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$" },
+    "colorOrToken": {
+      "type": "string",
+      "pattern": "^(#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?|@[A-Za-z][A-Za-z0-9._-]*)$"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scientific Figure Builder"
+  short_description: "Reconstruct and create research figures"
+  default_prompt: "Use $build-scientific-figures to reconstruct a reference figure or design a new paper-grounded scientific figure."

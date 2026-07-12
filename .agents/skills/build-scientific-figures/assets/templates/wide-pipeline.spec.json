@@ -1,0 +1,546 @@
+{
+  "version": "1.0",
+  "mode": "original",
+  "canvas": {
+    "width": 1600,
+    "height": 900,
+    "background": "#F6F8FB"
+  },
+  "theme": {
+    "font_family": "Noto Sans",
+    "font_fallbacks": [
+      "Liberation Sans",
+      "DejaVu Sans",
+      "Arial",
+      "sans-serif"
+    ],
+    "palette": {
+      "canvas": "#F6F8FB",
+      "surface": "#FFFFFF",
+      "ink": "#1F2933",
+      "muted_ink": "#52606D",
+      "temporal": "#356C9B",
+      "convergence": "#A65A16",
+      "result": "#2F7355",
+      "branch_a_fill": "#EDF4FA",
+      "branch_b_fill": "#EEF6F3"
+    },
+    "panel_radius": 16,
+    "panel_stroke_width": 2,
+    "connector_width": 3
+  },
+  "panels": [
+    {
+      "id": "branch-a-region",
+      "x": 80,
+      "y": 180,
+      "width": 920,
+      "height": 260,
+      "title": "Stream A: temporal sequence",
+      "subtitle": "Local state evolution",
+      "fill": "#EDF4FA",
+      "stroke": "#9BBBD3",
+      "radius": 18,
+      "header_height": 64,
+      "header_fill": "#DCEAF5",
+      "header_text_color": "#1F2933"
+    },
+    {
+      "id": "branch-b-region",
+      "x": 80,
+      "y": 490,
+      "width": 920,
+      "height": 260,
+      "title": "Stream B: temporal sequence",
+      "subtitle": "Independent local state evolution",
+      "fill": "#EEF6F3",
+      "stroke": "#9FC4B5",
+      "radius": 18,
+      "header_height": 64,
+      "header_fill": "#DCEDE7",
+      "header_text_color": "#1F2933"
+    },
+    {
+      "id": "a-tminus2",
+      "x": 130,
+      "y": 270,
+      "width": 220,
+      "height": 96,
+      "title": "State t-2",
+      "subtitle": "Earlier observation",
+      "fill": "#FFFFFF",
+      "stroke": "#9BBBD3",
+      "radius": 14,
+      "header_height": 40,
+      "header_fill": "#F7FAFC",
+      "header_text_color": "#1F2933"
+    },
+    {
+      "id": "a-tminus1",
+      "x": 430,
+      "y": 270,
+      "width": 220,
+      "height": 96,
+      "title": "State t-1",
+      "subtitle": "Updated representation",
+      "fill": "#FFFFFF",
+      "stroke": "#9BBBD3",
+      "radius": 14,
+      "header_height": 40,
+      "header_fill": "#F7FAFC",
+      "header_text_color": "#1F2933"
+    },
+    {
+      "id": "a-t0",
+      "x": 730,
+      "y": 270,
+      "width": 220,
+      "height": 96,
+      "title": "State t",
+      "subtitle": "Branch A evidence",
+      "fill": "#FFFFFF",
+      "stroke": "#6E9ABC",
+      "radius": 14,
+      "header_height": 40,
+      "header_fill": "#F1F7FB",
+      "header_text_color": "#1F2933"
+    },
+    {
+      "id": "b-tminus2",
+      "x": 130,
+      "y": 580,
+      "width": 220,
+      "height": 96,
+      "title": "State t-2",
+      "subtitle": "Earlier observation",
+      "fill": "#FFFFFF",
+      "stroke": "#9FC4B5",
+      "radius": 14,
+      "header_height": 40,
+      "header_fill": "#F7FAFC",
+      "header_text_color": "#1F2933"
+    },
+    {
+      "id": "b-tminus1",
+      "x": 430,
+      "y": 580,
+      "width": 220,
+      "height": 96,
+      "title": "State t-1",
+      "subtitle": "Updated representation",
+      "fill": "#FFFFFF",
+      "stroke": "#9FC4B5",
+      "radius": 14,
+      "header_height": 40,
+      "header_fill": "#F7FAFC",
+      "header_text_color": "#1F2933"
+    },
+    {
+      "id": "b-t0",
+      "x": 730,
+      "y": 580,
+      "width": 220,
+      "height": 96,
+      "title": "State t",
+      "subtitle": "Branch B evidence",
+      "fill": "#FFFFFF",
+      "stroke": "#6CA58E",
+      "radius": 14,
+      "header_height": 40,
+      "header_fill": "#F0F8F5",
+      "header_text_color": "#1F2933"
+    },
+    {
+      "id": "fusion",
+      "x": 1100,
+      "y": 300,
+      "width": 230,
+      "height": 320,
+      "title": "Integration",
+      "subtitle": "Combine independent evidence",
+      "fill": "#FFF1E3",
+      "stroke": "#C8874F",
+      "radius": 18,
+      "header_height": 64,
+      "header_fill": "#FBE3CA",
+      "header_text_color": "#1F2933"
+    },
+    {
+      "id": "result",
+      "x": 1400,
+      "y": 385,
+      "width": 150,
+      "height": 150,
+      "title": "Result",
+      "subtitle": "Interpretable output",
+      "fill": "#E8F4EE",
+      "stroke": "#69A087",
+      "radius": 18,
+      "header_height": 54,
+      "header_fill": "#D7EBE1",
+      "header_text_color": "#1F2933"
+    }
+  ],
+  "texts": [
+    {
+      "id": "figure-title",
+      "text": "Two-stream scientific pipeline",
+      "x": 80,
+      "y": 56,
+      "width": 900,
+      "height": 44,
+      "font_size": 32,
+      "font_weight": "bold",
+      "color": "#1F2933",
+      "align": "left"
+    },
+    {
+      "id": "figure-subtitle",
+      "text": "Temporal order stays within each stream; only completed evidence enters the convergence network.",
+      "x": 80,
+      "y": 108,
+      "width": 1180,
+      "height": 30,
+      "font_size": 18,
+      "font_weight": "normal",
+      "color": "#52606D",
+      "align": "left"
+    },
+    {
+      "id": "temporal-note-a",
+      "text": "Solid blue: internal temporal arrows",
+      "x": 130,
+      "y": 390,
+      "width": 420,
+      "height": 24,
+      "font_size": 14,
+      "font_weight": "medium",
+      "color": "#356C9B",
+      "align": "left"
+    },
+    {
+      "id": "temporal-note-b",
+      "text": "Solid blue: internal temporal arrows",
+      "x": 130,
+      "y": 700,
+      "width": 420,
+      "height": 24,
+      "font_size": 14,
+      "font_weight": "medium",
+      "color": "#356C9B",
+      "align": "left"
+    },
+    {
+      "id": "convergence-note",
+      "text": "Dashed orange: external convergence; no cross-stream time order is implied.",
+      "x": 1030,
+      "y": 666,
+      "width": 500,
+      "height": 54,
+      "font_size": 14,
+      "font_weight": "medium",
+      "color": "#A65A16",
+      "align": "left"
+    },
+    {
+      "id": "template-note",
+      "text": "Replace labels and state contents while preserving declared scopes and ports.",
+      "x": 80,
+      "y": 812,
+      "width": 900,
+      "height": 26,
+      "font_size": 13,
+      "font_weight": "normal",
+      "color": "#52606D",
+      "align": "left"
+    }
+  ],
+  "ports": [
+    {
+      "id": "a.tminus2.out",
+      "owner": "branch-a-region",
+      "x": 350,
+      "y": 318,
+      "scope": "internal"
+    },
+    {
+      "id": "a.tminus1.in",
+      "owner": "branch-a-region",
+      "x": 430,
+      "y": 318,
+      "scope": "internal"
+    },
+    {
+      "id": "a.tminus1.out",
+      "owner": "branch-a-region",
+      "x": 650,
+      "y": 318,
+      "scope": "internal"
+    },
+    {
+      "id": "a.t0.in",
+      "owner": "branch-a-region",
+      "x": 730,
+      "y": 318,
+      "scope": "internal"
+    },
+    {
+      "id": "a.t0.out",
+      "owner": "branch-a-region",
+      "x": 950,
+      "y": 318,
+      "scope": "external"
+    },
+    {
+      "id": "b.tminus2.out",
+      "owner": "branch-b-region",
+      "x": 350,
+      "y": 628,
+      "scope": "internal"
+    },
+    {
+      "id": "b.tminus1.in",
+      "owner": "branch-b-region",
+      "x": 430,
+      "y": 628,
+      "scope": "internal"
+    },
+    {
+      "id": "b.tminus1.out",
+      "owner": "branch-b-region",
+      "x": 650,
+      "y": 628,
+      "scope": "internal"
+    },
+    {
+      "id": "b.t0.in",
+      "owner": "branch-b-region",
+      "x": 730,
+      "y": 628,
+      "scope": "internal"
+    },
+    {
+      "id": "b.t0.out",
+      "owner": "branch-b-region",
+      "x": 950,
+      "y": 628,
+      "scope": "external"
+    },
+    {
+      "id": "fusion.in.a",
+      "owner": "fusion",
+      "x": 1100,
+      "y": 382,
+      "scope": "external"
+    },
+    {
+      "id": "fusion.in.b",
+      "owner": "fusion",
+      "x": 1100,
+      "y": 538,
+      "scope": "external"
+    },
+    {
+      "id": "fusion.out",
+      "owner": "fusion",
+      "x": 1330,
+      "y": 460,
+      "scope": "external"
+    },
+    {
+      "id": "result.in",
+      "owner": "result",
+      "x": 1400,
+      "y": 460,
+      "scope": "external"
+    }
+  ],
+  "edges": [
+    {
+      "id": "a-tminus2-to-tminus1",
+      "from": "a.tminus2.out",
+      "to": "a.tminus1.in",
+      "scope": "internal",
+      "meaning": "Stream A advances from t-2 to t-1",
+      "arrowhead": "end",
+      "points": [
+        {
+          "x": 350,
+          "y": 318
+        },
+        {
+          "x": 430,
+          "y": 318
+        }
+      ],
+      "color": "#356C9B",
+      "width": 3,
+      "dash": "solid"
+    },
+    {
+      "id": "a-tminus1-to-t0",
+      "from": "a.tminus1.out",
+      "to": "a.t0.in",
+      "scope": "internal",
+      "meaning": "Stream A advances from t-1 to t",
+      "arrowhead": "end",
+      "points": [
+        {
+          "x": 650,
+          "y": 318
+        },
+        {
+          "x": 730,
+          "y": 318
+        }
+      ],
+      "color": "#356C9B",
+      "width": 3,
+      "dash": "solid"
+    },
+    {
+      "id": "b-tminus2-to-tminus1",
+      "from": "b.tminus2.out",
+      "to": "b.tminus1.in",
+      "scope": "internal",
+      "meaning": "Stream B advances from t-2 to t-1",
+      "arrowhead": "end",
+      "points": [
+        {
+          "x": 350,
+          "y": 628
+        },
+        {
+          "x": 430,
+          "y": 628
+        }
+      ],
+      "color": "#356C9B",
+      "width": 3,
+      "dash": "solid"
+    },
+    {
+      "id": "b-tminus1-to-t0",
+      "from": "b.tminus1.out",
+      "to": "b.t0.in",
+      "scope": "internal",
+      "meaning": "Stream B advances from t-1 to t",
+      "arrowhead": "end",
+      "points": [
+        {
+          "x": 650,
+          "y": 628
+        },
+        {
+          "x": 730,
+          "y": 628
+        }
+      ],
+      "color": "#356C9B",
+      "width": 3,
+      "dash": "solid"
+    },
+    {
+      "id": "branch-a-to-fusion",
+      "from": "a.t0.out",
+      "to": "fusion.in.a",
+      "scope": "external",
+      "meaning": "Completed Stream A evidence enters integration",
+      "arrowhead": "end",
+      "points": [
+        {
+          "x": 950,
+          "y": 318
+        },
+        {
+          "x": 1030,
+          "y": 318
+        },
+        {
+          "x": 1030,
+          "y": 382
+        },
+        {
+          "x": 1100,
+          "y": 382
+        }
+      ],
+      "color": "#A65A16",
+      "width": 3,
+      "dash": "dashed"
+    },
+    {
+      "id": "branch-b-to-fusion",
+      "from": "b.t0.out",
+      "to": "fusion.in.b",
+      "scope": "external",
+      "meaning": "Completed Stream B evidence enters integration",
+      "arrowhead": "end",
+      "points": [
+        {
+          "x": 950,
+          "y": 628
+        },
+        {
+          "x": 1040,
+          "y": 628
+        },
+        {
+          "x": 1040,
+          "y": 538
+        },
+        {
+          "x": 1100,
+          "y": 538
+        }
+      ],
+      "color": "#A65A16",
+      "width": 3,
+      "dash": "dashed"
+    },
+    {
+      "id": "fusion-to-result",
+      "from": "fusion.out",
+      "to": "result.in",
+      "scope": "external",
+      "meaning": "Integrated evidence produces the terminal result",
+      "arrowhead": "end",
+      "points": [
+        {
+          "x": 1330,
+          "y": 460
+        },
+        {
+          "x": 1400,
+          "y": 460
+        }
+      ],
+      "color": "#2F7355",
+      "width": 3,
+      "dash": "solid"
+    }
+  ],
+  "assets": [],
+  "outputs": {
+    "formats": [
+      "svg",
+      "png",
+      "pdf"
+    ]
+  },
+  "review": {
+    "semantic_graph_approved": true
+  },
+  "provenance": [
+    {
+      "id": "template-origin",
+      "source": "Original reusable geometry and topology created within the build-scientific-figures skill",
+      "status": "verified"
+    },
+    {
+      "id": "external-assets",
+      "source": "Asset audit confirms that no paper figure or third-party visual asset is embedded",
+      "status": "verified"
+    }
+  ]
+}
