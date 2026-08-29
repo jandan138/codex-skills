@@ -35,12 +35,15 @@ Read [input-and-modes.md](references/input-and-modes.md), then choose exactly on
 - `original`: paper-driven design from first principles.
 
 For publication-bound work based on another paper, prefer `inspired`. Do not bundle or redistribute
-the source reference as a Skill asset.
+the source reference as a Skill asset unless the repository maintainer explicitly authorizes that
+specific file and its provenance and reuse boundary are documented. A bundled case study is not a
+license to reuse its third-party reference image in a new publication.
 
 Read only the references required by the task:
 
 - Paper, manuscript, or supplement: [paper-to-figure.md](references/paper-to-figure.md)
 - Reference screenshot or design language: [visual-grammar.md](references/visual-grammar.md)
+- EBench reference-to-editable-PPTX example: [ebench-case-study.md](references/ebench-case-study.md)
 - Sequence, branch, merge, feedback, or long connector: [arrow-topology.md](references/arrow-topology.md)
 - Spec authoring or backend behavior: [figure-spec.md](references/figure-spec.md)
 - Linux/runtime capability or fallback: [linux-portability.md](references/linux-portability.md)

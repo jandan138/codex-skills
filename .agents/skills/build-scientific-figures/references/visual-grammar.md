@@ -23,8 +23,10 @@ of any paper.
   are render products.
 - Design on Linux first. Use UTF-8, forward-slash relative asset paths, explicit
   canvas dimensions, and fonts with common Linux substitutes.
-- Keep the default template original. Do not embed, trace, crop, or redistribute
-  a reference-paper figure in a bundled asset.
+- Keep the default template original. A bundled third-party reference figure is allowed only when
+  the repository maintainer explicitly authorizes that exact file and its provenance, copyright
+  status, and reuse boundary are documented. Keep it separate from original templates and never
+  imply that the Skill's license covers it.
 - Encode meaning redundantly. Important distinctions need at least two of label,
   geometry, color, line style, and position.
 - Prefer stable vector primitives over platform-dependent glyphs, emoji, or
@@ -124,6 +126,11 @@ Reference papers may inform facts, labels, and topology. They must not silently
 become packaged visual assets. For an inspired figure, change the composition,
 visual hierarchy, geometry, palette, and icon vocabulary rather than applying a
 new color layer to the source layout.
+
+The EBench case study is a deliberate, documented exception for teaching the reconstruction
+workflow. Read [ebench-case-study.md](ebench-case-study.md) before using its reference image or
+editable PPTX. Treat the reference image as third-party material and the PPTX as an editable
+learning artifact, not as an official EBench template.
 
 ## Render acceptance
 

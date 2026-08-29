@@ -1,0 +1,43 @@
+{
+  "case_study": "EBench reference-to-editable-PPTX reconstruction",
+  "verified_on": "2026-08-29",
+  "assets": [
+    {
+      "path": "ebench-figure-2-reference.png",
+      "role": "third-party reference screenshot",
+      "sha256": "f84dfa0af9076f04a64800bcd84811a1e31f155401095e01990c9d76878c4479",
+      "identity": "Figure 2, EBench end-to-end pipeline",
+      "paper": "EBench: Elemental Diagnosis of Generalist Mobile Manipulation Policies",
+      "paper_url": "https://arxiv.org/abs/2606.18239",
+      "project_url": "https://github.com/InternRobotics/EBench",
+      "copyright": "EBench paper authors",
+      "license_status": "The arXiv record uses the arXiv non-exclusive distribution license; no Creative Commons license was identified for the paper figure.",
+      "repository_authorization": "The repository maintainer explicitly authorized publishing the supplied screenshot as a reference for later Skill users.",
+      "reuse_boundary": "Reference and analysis only. Not covered by a license for the Skill's original code or templates; downstream users must establish their own permission or legal basis for redistribution."
+    },
+    {
+      "path": "ebench-reconstructed-template.pptx",
+      "role": "editable reconstructed learning template",
+      "sha256": "8a37070dd5bcbf6401c9a580458c8ebce61707717af9a07e8616dcefa0cc44db",
+      "relationship": "Independent reconstruction produced during Skill development; not an official EBench asset.",
+      "editability_summary": {
+        "slides": 1,
+        "native_shapes": 176,
+        "native_connectors": 22,
+        "embedded_pictures": 56,
+        "external_or_absolute_path_hits": 0
+      },
+      "validation": [
+        "fresh render completed",
+        "full-slide visual inspection completed",
+        "PowerPoint overflow test passed"
+      ]
+    },
+    {
+      "path": "ebench-reconstructed-template-preview.png",
+      "role": "rendered visual baseline for the editable template",
+      "sha256": "4a305e0d5552280e7428ca6759d77042a750e3fa62bc3303f5d279869ae425d9",
+      "generated_from": "ebench-reconstructed-template.pptx"
+    }
+  ]
+}

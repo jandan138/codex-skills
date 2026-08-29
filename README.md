@@ -1,12 +1,27 @@
 # jandan138 Codex Skills
 
-Private, version-controlled home for personal Codex skills.
+Public, version-controlled home for reusable Codex skills.
 
 ## Skill catalog
 
 | Skill | Purpose | Entry point |
 | --- | --- | --- |
 | `$build-scientific-figures` | Reconstruct reference-led research figures and create original paper-grounded figures from PDFs, simulation frames, plots, and user assets. | [SKILL.md](.agents/skills/build-scientific-figures/SKILL.md) |
+
+## Included case study
+
+The scientific-figure Skill includes a documented EBench example with the supplied Figure 2
+reference screenshot, the user-accepted editable PPTX reconstruction, and a freshly rendered
+preview. Start with the
+[case-study guide](.agents/skills/build-scientific-figures/references/ebench-case-study.md).
+
+The EBench paper figure is third-party reference material and is not covered by a license for this
+repository's original code or templates. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and
+the bundled provenance record before redistributing it.
+
+| Original reference | Accepted editable reconstruction |
+| --- | --- |
+| [![EBench Figure 2 reference](.agents/skills/build-scientific-figures/assets/examples/ebench/ebench-figure-2-reference.png)](.agents/skills/build-scientific-figures/assets/examples/ebench/ebench-figure-2-reference.png) | [![Rendered editable PPTX](.agents/skills/build-scientific-figures/assets/examples/ebench/ebench-reconstructed-template-preview.png)](.agents/skills/build-scientific-figures/assets/examples/ebench/ebench-reconstructed-template.pptx) |
 
 ## Use directly from this repository
 
@@ -57,6 +72,7 @@ projection; the specification plus canonical SVG remain authoritative.
 
 - Store each skill at `.agents/skills/<skill-name>/`.
 - Keep real papers, private experiment data, generated figures, and temporary QA artifacts out of
-  the skill package unless they are intentional, redistributable fixtures.
+  the skill package unless they are intentional, documented fixtures. Third-party reference assets
+  require explicit maintainer authorization, provenance, attribution, and a clear reuse boundary.
 - Preserve Linux-safe relative paths, UTF-8 text, deterministic scripts, and provenance.
 - Validate and forward-test a skill before publishing changes.
