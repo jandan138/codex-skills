@@ -168,6 +168,14 @@ or untrusted active/external SVG content.
 5. Re-open and inspect the final Rendering at 1x and 2x.
 6. Audit Sources and provenance, then assign the verdict.
 
+For an editable PPTX, also run `scripts/audit_pptx_figure.py` and retain its JSON output. Treat
+unexpected font-size proliferation, near-total bolding, default roundness across unrelated card
+classes, nonzero theme effects, and machine-path hits as review findings. Numeric complexity budgets
+are contextual; they never override scientific completeness or readable source text.
+
+When a title or child object is placed near a rounded panel corner, verify containment against the
+visible rounded outline. Bounding-box containment alone is insufficient.
+
 Log findings as:
 
 ```text

@@ -145,3 +145,16 @@ Before delivery, verify all of the following:
 - The provenance list distinguishes original geometry from supplied assets.
 - No absolute Windows path, backslash-only path, linked office object, or
   proprietary font is required to reproduce the render.
+
+## Hero-figure hierarchy
+
+For a paper hero or Figure 1, read `story-first-hero.md`. A technically correct graph can still
+fail visually when it gives inputs, architecture, evidence, audit rows, and caveats equal weight.
+Before adding decoration, remove competing figure roles, repeated outcomes, uniform bolding, and
+unnecessary containment. Use complexity counts as diagnostics and approve the result at the actual
+paper inclusion width.
+
+Avoid the default-slide look in which every object is the same rounded rectangle, pale fill, border
+weight, and bold label. Vary typography, corner radius, fill area, and whitespace according to
+semantic class. The evidence readers should remember deserves more visual area than supporting
+configuration or audit detail.

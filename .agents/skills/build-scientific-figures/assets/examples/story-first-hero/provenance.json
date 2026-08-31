@@ -1,0 +1,116 @@
+{
+  "case_study": "Story-first authority hero and reference gallery",
+  "verified_on": "2026-08-31",
+  "public_push_ready": false,
+  "public_push_blocker": "The ACL screenshots contain logos, emoji, or small graphic elements whose third-party status is not established by the ACL Anthology license. Keep this commit local until those components are cleared or the screenshots are removed.",
+  "assets": [
+    {
+      "path": "authority-paths-case-study.pptx",
+      "role": "editable project-owned story-first case study",
+      "sha256": "f4e9a0d7e540ed54c4793fd1bace57fb56c222ed74b2a0d6ce48146900db0e5f",
+      "source": "Genesis-LLM ACL 2027 Figure 1 Round 09 K1",
+      "reuse_boundary": "Project-owned example. Replace scientific labels, values, provenance, and render frames before adapting it to another paper."
+    },
+    {
+      "path": "authority-paths-case-study-preview.png",
+      "role": "rendered visual baseline for the project case study",
+      "sha256": "a10c216de35787cd7ec57cc3f752d489c06dee10cc259a3819df1a007ad9f11f",
+      "generated_from": "authority-paths-case-study.pptx"
+    },
+    {
+      "path": "story-first-hero-template.pptx",
+      "role": "neutral editable story-first branch-merge-execution template",
+      "sha256": "dd2a5ed66bcc335a4e5ab4edeb486c5ede426e2ad41c7f84cfc028f55c27b9ff",
+      "generated_from": "authority-paths-case-study.pptx via scripts/create_story_first_template.py",
+      "reuse_boundary": "Neutral geometry only. The template does not approve an adapted scientific graph. Replace placeholders and obtain semantic review."
+    },
+    {
+      "path": "story-first-hero-template-preview.png",
+      "role": "rendered visual baseline for the neutral template",
+      "sha256": "c22a47d6e64d1e6cb6a7ac2da178527d76ed0488deb2304e3898c772f405a201",
+      "generated_from": "story-first-hero-template.pptx"
+    },
+    {
+      "path": "reference-gallery/geval-figure1.png",
+      "role": "direct crop of an ACL Anthology paper figure for private reference analysis",
+      "sha256": "4078595f7d086a399cf3d0f7084a0ae6deb3776298d0dca19668458a5a056e36",
+      "identity": "Figure 1, G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment",
+      "authors": "Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, Chenguang Zhu",
+      "paper_url": "https://aclanthology.org/2023.emnlp-main.153/",
+      "pdf_url": "https://aclanthology.org/2023.emnlp-main.153.pdf",
+      "pdf_sha256": "37e137b676440da918bd7a7daa36518899bf4618c34c332b56049c7b9e82f406",
+      "pdf_page_one_based": 3,
+      "render_dpi": 130,
+      "crop_box_pixels": [125, 120, 950, 635],
+      "license": "ACL Anthology materials published in or after 2016: CC BY 4.0",
+      "license_url": "https://aclanthology.org/faq/copyright/",
+      "third_party_caveat": "The figure visibly contains an OpenAI mark. ACL states that its license does not cover third-party material."
+    },
+    {
+      "path": "reference-gallery/simulated-trial-and-error-figure1.png",
+      "role": "direct crop of an ACL Anthology paper figure for private reference analysis",
+      "sha256": "4948870c0f66f1be58aa2f1105b45d789cecc944cebe67c1a7b83a8333ef010c",
+      "identity": "Figure 1, LLMs in the Imaginarium: Tool Learning through Simulated Trial and Error",
+      "authors": "Boshi Wang, Hao Fang, Jason Eisner, Benjamin Van Durme, Yu Su",
+      "paper_url": "https://aclanthology.org/2024.acl-long.570/",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.570.pdf",
+      "pdf_sha256": "8a737cb2acbfe53a00a07c7b6843d65176db3ec7ec4ef088946fc8f51263b378",
+      "pdf_page_one_based": 2,
+      "render_dpi": 130,
+      "crop_box_pixels": [145, 115, 925, 495],
+      "license": "ACL Anthology materials published in or after 2016: CC BY 4.0",
+      "license_url": "https://aclanthology.org/faq/copyright/",
+      "third_party_caveat": "Small illustrative icons appear in the figure; their independent source/license is not stated in the paper."
+    },
+    {
+      "path": "reference-gallery/self-instruct-figure2.png",
+      "role": "direct crop of an ACL Anthology paper figure for private reference analysis",
+      "sha256": "2c70495482be65e4da595317f9f7df8c06872a59e429cdbc2078a87da18c233b",
+      "identity": "Figure 2, Self-Instruct: Aligning Language Models with Self-Generated Instructions",
+      "authors": "Yizhong Wang, Yeganeh Kordi, Swaroop Mishra, Alisa Liu, Noah A. Smith, Daniel Khashabi, Hannaneh Hajishirzi",
+      "paper_url": "https://aclanthology.org/2023.acl-long.754/",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.754.pdf",
+      "pdf_sha256": "87f1d8476fa041d0c6b09b9239253ed698c4efac973347aebe83c487eab91c78",
+      "pdf_page_one_based": 2,
+      "render_dpi": 130,
+      "crop_box_pixels": [155, 110, 920, 490],
+      "license": "ACL Anthology materials published in or after 2016: CC BY 4.0",
+      "license_url": "https://aclanthology.org/faq/copyright/",
+      "third_party_caveat": "The figure contains emoji/clip-art-like elements whose independent source/license is not stated in the paper."
+    },
+    {
+      "path": "reference-gallery/hybridnet-general-architecture.png",
+      "role": "original editable-PPT figure preview",
+      "sha256": "65dc713b2fae51315d04cda2fae51d69d55c77dca19e90d116d66fceea435ec8",
+      "identity": "HybridNet general architecture",
+      "creator": "Thomas Robert",
+      "source_url": "https://github.com/ThomasRobertFr/deep-learning-figures/blob/master/3_03_hybridnet_general-archi.png",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://github.com/ThomasRobertFr/deep-learning-figures/blob/master/LICENSE.md",
+      "reuse_boundary": "Reference analysis only by default. Attribution, non-commercial use, and share-alike obligations apply to reuse or adaptation."
+    },
+    {
+      "path": "reference-gallery/dualdis-architecture.png",
+      "role": "original editable-PPT figure preview",
+      "sha256": "a4ae938e698c6bf41296403212ec565a174ec64f881988aeeba7c371127e9523",
+      "identity": "DualDis architecture and training",
+      "creator": "Thomas Robert",
+      "source_url": "https://github.com/ThomasRobertFr/deep-learning-figures/blob/master/4_02_dualdis_archi.png",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://github.com/ThomasRobertFr/deep-learning-figures/blob/master/LICENSE.md",
+      "reuse_boundary": "Reference analysis only by default. Attribution, non-commercial use, and share-alike obligations apply to reuse or adaptation."
+    },
+    {
+      "path": "reference-gallery/contact-sheet.png",
+      "role": "derived contact sheet for quick local inspection",
+      "sha256": "390150cfdef09f76bc93b9fa45f7b6059c5b34f8e1498e56e41f76df57b09522",
+      "sources": [
+        "reference-gallery/geval-figure1.png",
+        "reference-gallery/simulated-trial-and-error-figure1.png",
+        "reference-gallery/self-instruct-figure2.png",
+        "reference-gallery/hybridnet-general-architecture.png",
+        "reference-gallery/dualdis-architecture.png"
+      ]
+    }
+  ]
+}

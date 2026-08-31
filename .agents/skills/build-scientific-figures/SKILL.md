@@ -44,9 +44,11 @@ Read only the references required by the task:
 - Paper, manuscript, or supplement: [paper-to-figure.md](references/paper-to-figure.md)
 - Reference screenshot or design language: [visual-grammar.md](references/visual-grammar.md)
 - EBench reference-to-editable-PPTX example: [ebench-case-study.md](references/ebench-case-study.md)
+- Story-first paper hero, Figure 1 simplification, or repeated visual-polish iteration: [story-first-hero.md](references/story-first-hero.md)
 - Sequence, branch, merge, feedback, or long connector: [arrow-topology.md](references/arrow-topology.md)
 - Spec authoring or backend behavior: [figure-spec.md](references/figure-spec.md)
 - Linux/runtime capability or fallback: [linux-portability.md](references/linux-portability.md)
+- Native PPTX hardening, typography budgets, theme effects, or LibreOffice drift: [pptx-figure-hardening.md](references/pptx-figure-hardening.md)
 - Final review and evidence: [qa-rubric.md](references/qa-rubric.md)
 
 ## Workflow
@@ -151,6 +153,10 @@ python scripts/render_outputs.py out/figure.pptx --output-dir out/pptx-render
 PptxGenJS panels, text, and segmented connectors remain editable, but the canonical SVG controls
 exact rounded routes and crops. Do not claim legacy SVG fallback compatibility unless a real raster
 fallback was generated and tested.
+
+For a paper hero or editable PPTX, run `scripts/audit_pptx_figure.py` after the final save. Treat
+shape, word, font-size, and bold-ratio budgets as context-sensitive diagnostics; set hard limits only
+when the author has approved them or when a validated case study supplies a relevant starting point.
 
 ### 7. Perform four-layer review
 
