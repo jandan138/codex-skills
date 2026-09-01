@@ -43,8 +43,10 @@ Read only the references required by the task:
 
 - Paper, manuscript, or supplement: [paper-to-figure.md](references/paper-to-figure.md)
 - Reference screenshot or design language: [visual-grammar.md](references/visual-grammar.md)
+- Published top-conference figures as design references: [reference-led-design.md](references/reference-led-design.md)
 - EBench reference-to-editable-PPTX example: [ebench-case-study.md](references/ebench-case-study.md)
 - Story-first paper hero, Figure 1 simplification, or repeated visual-polish iteration: [story-first-hero.md](references/story-first-hero.md)
+- Generated 2D academic illustrations or icon families: [academic-2d-illustrations.md](references/academic-2d-illustrations.md)
 - Sequence, branch, merge, feedback, or long connector: [arrow-topology.md](references/arrow-topology.md)
 - Spec authoring or backend behavior: [figure-spec.md](references/figure-spec.md)
 - Linux/runtime capability or fallback: [linux-portability.md](references/linux-portability.md)
@@ -130,6 +132,11 @@ python scripts/sanitize_svg.py source.svg safe.svg
 
 Use only the safe copy in the spec. Preserve source, generator/model, prompt or design brief, date,
 and manual edits in provenance.
+
+When a small raster illustration communicates a physical scene or module role more clearly than a
+generic SVG symbol, use the workflow in `academic-2d-illustrations.md`. Keep generated components
+replaceable and compose them deterministically; an illustration does not become experimental
+evidence merely because it resembles the task domain.
 
 ### 6. Render canonical SVG and portable outputs
 
