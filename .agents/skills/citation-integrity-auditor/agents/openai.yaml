@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citation Integrity Auditor"
+  short_description: "Verify references and claim support before submission"
+  default_prompt: "Use $citation-integrity-auditor to verify every cited source, its metadata, and whether it supports the manuscript claim."
