@@ -18,7 +18,7 @@ the final rendered artifact; neither view alone is sufficient.
 
 ## Required evidence
 
-Collect these items before scoring:
+Collect these items before assigning a verdict:
 
 - The user's brief and, when applicable, the reference figure at its native resolution.
 - The editable source and the exact final deliverable (`.svg`, `.pdf`, `.pptx`, or raster image).
@@ -38,20 +38,15 @@ Assign every finding one severity:
   reference, or fails in the target renderer. It blocks delivery until fixed.
 - **Minor**: visible polish or consistency defect that does not change meaning.
 
-Score each dimension from 0 to 5, then apply its weight. A figure passes only when all hard gates
-pass, no Critical or Major findings remain, and the weighted score is at least 90/100.
+Assign `Pass` only when required checks have evidence, hard gates pass, and no unresolved Critical
+or Major findings remain. Use `Conditional` for evidenced hard gates with explicitly listed Minor
+limitations; use `Fail` for blocking defects. If a required check is `NE`, mark the review incomplete.
+Keep technical validation and author visual acceptance distinct. If the author still identifies an
+unresolved visual problem, report that problem rather than declaring the requested revision done.
 
-| Dimension | Weight | Hard gate |
-| --- | ---: | :---: |
-| Semantics | 25 | Yes |
-| Topology | 20 | Yes |
-| Geometry | 15 | No |
-| Style | 15 | No |
-| Rendering | 15 | Yes |
-| Sources and provenance | 10 | Yes |
-
-Use `Conditional` only for a score of 80--89 with no hard-gate failure and a written list of
-remaining Minor findings. Otherwise use `Fail`.
+Do not use a self-assigned numerical aesthetic score or a weighted total as a delivery threshold.
+No clipping, correct XML, and native editability establish technical properties, not good visual
+communication. Support each design conclusion with a concrete observation in the final render.
 
 ## 1. Semantics
 
@@ -65,6 +60,11 @@ remaining Minor findings. Otherwise use `Fail`.
   capabilities, or causal relationships.
 - Make distinctions accessible without color alone when the distinction is scientifically
   important; add labels, shapes, or line styles as needed.
+- For each illustration, identify the actor, object, operation, visible relationship, and likely
+  misreading. Briefly hide titles to diagnose generic silhouettes, then restore labels and evaluate
+  their combined meaning. Abstract concepts need not be perfectly recognizable without text.
+- After removing a label, verify that the remaining graphic, connections, and caption still recover
+  its essential scientific role. Do not turn a required procedure into an apparently optional one.
 
 **Hard-gate failures:** wrong scientific claim, wrong number or unit, ambiguous legend that can
 invert interpretation, missing required condition, or fabricated evidence.
@@ -118,10 +118,11 @@ the user requests a looser match. Judge optical centering separately from numeri
 - Match font family, weight, case, line spacing, and numeric formatting within each component
   family. Avoid unintended fallback fonts.
 - Normalize stroke widths, corner radii, dash patterns, arrowhead families, line caps, and joins.
-- Keep icon abstraction and detail density consistent. Enclose heterogeneous icons in a shared
-  card or badge system when necessary.
-- Prefer vector shapes for framework, text, icons, and connectors; use raster images for genuine
-  renders, photographs, or dense contact sheets.
+- Keep illustration abstraction, line character, and detail density consistent. Shared framing can
+  group compatible assets, but cannot repair an unclear role or justify repetitive menu-like cards.
+- Prefer native shapes for framework, text, precise schematics, and connectors. Real images and
+  generated explanatory illustrations may be raster assets with separate provenance and editability
+  disclosures; judge the medium by what it needs to communicate.
 - Avoid stylistic cleanup that changes an approved reference's information hierarchy.
 
 ## 5. Rendering
@@ -136,6 +137,10 @@ the user requests a looser match. Judge optical centering separately from numeri
 - Verify raster resolution and crop quality; do not upscale low-resolution evidence without
   disclosure.
 - Test the required background, including transparent or dark backgrounds when applicable.
+- Check inserted paper width, not just source canvas size. Inspect small components with their
+  actual labels on white, intended panel fill, and grayscale; enlarged beauty is not sufficient.
+- Compare embedded-image resolution before and after office export. Follow
+  [pptx-figure-hardening.md](pptx-figure-hardening.md) for export and manuscript integration checks.
 
 **Hard-gate failures:** required content missing or unreadable in the final artifact, corrupted
 file, unsafe SVG accepted into the output, or target renderer materially changing meaning.
@@ -179,7 +184,7 @@ visible rounded outline. Bounding-box containment alone is insufficient.
 Log findings as:
 
 ```text
-ID | category | severity | page/panel and coordinates | expected | observed | fix | status
+ID | category | severity | page/panel and coordinates | expected | observed | fix | fresh-render evidence | status
 ```
 
 Do not close a finding based only on the editable source. Close it after inspecting a fresh render

@@ -40,6 +40,9 @@ rounded outline, not only `left/top/width/height` inequalities.
 - Use a small, deliberate font-size set. A large number of local sizes usually indicates text was
   squeezed after layout.
 - Check text at the actual paper inclusion width. PPT source points are scaled with the canvas.
+  For uniform scaling, `paper_pt = source_pt * inserted_width / source_canvas_width`, using the
+  same units for both widths. For example, 8 pt on a 183 mm source becomes about 7 pt at 160 mm.
+  Inspect the actual PDF; this example is not a minimum-font recommendation.
 - Normalize margins and vertical anchors within a repeated family.
 - Compare exact EMU coordinates for row/column baselines. Differences around `0.03 inch` are
   visible in dense tables.
@@ -66,3 +69,30 @@ For an editable PPTX, keep all three artifacts:
 Inspect the full figure and dense crops. Check one slide, no external relationships, no machine-
 specific paths, no missing fonts, no clipped text, and no unexplained theme effects. Canonical SVG
 or code output does not substitute for reviewing the actual PPTX round-trip.
+
+## Embedded image quality
+
+A high-resolution slide PNG does not prove that the office-exported PDF retains source image
+pixels. Compare embedded image dimensions with the originals and their final placed size. Prefer
+export settings that preserve image quality, then inspect the resulting PDF for downsampling.
+
+If an export still reduces essential images, a source-pixel restoration is an optional, narrowly
+verified fallback. Retain the original PDF, map each target unambiguously, and preserve placement,
+clipping, page dimensions, native text, vectors, color interpretation, and transparency. Compare
+decoded replacement pixels with the original asset and confirm unchanged page drawing commands;
+render again to detect masking or color changes. Do not retouch evidence or strip alpha as part of
+this operation. A mapping tied to one export's object names and dimensions is not a reusable
+general-purpose restoration tool. A changed export must be remapped and revalidated.
+
+## Manuscript integration
+
+Integrate only within the author's requested scope. Retain the accepted source and caption, update
+the active manuscript reference and provenance, and protect the accepted figure from unrelated
+multi-figure exporters (a versioned output filename is one practical option).
+
+Compile the manuscript and inspect the actual figure page, dense regions, and print-size details.
+Check font scaling, embedded images, label alignment, caption meaning, and connection topology.
+Compare page count and compiler warnings against the pre-change baseline, verify references resolve,
+and check that neighboring figures were not changed. Report remaining small-text limits explicitly.
+Keep required/optional procedures, schematic-versus-observed boundaries, and planned-versus-achieved
+outcomes recoverable after graphic labels are shortened or removed.

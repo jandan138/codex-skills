@@ -18,13 +18,16 @@ PPTX as derived deliverables.
 - Never invent a scientific relationship, number, unit, capability, or experimental result.
 - Preserve provenance for paper claims, user assets, generated icons, simulation renders, and
   external visual material.
-- Use real experiment or simulation images as raster assets. Use code-native, sanitized SVG for
-  small schematic icons and connector networks.
+- Preserve real experiment or simulation images as evidence. Use native geometry for labels,
+  precise schematic relationships, and connector networks; use replaceable generated raster
+  illustrations when they explain a role or scene more clearly. Keep those asset classes distinct.
 - Use Linux-safe relative paths, UTF-8, and open fonts. Never require PowerShell, Office COM,
   Windows absolute paths, or a proprietary font for the canonical output.
 - Do not mark the semantic graph approved when material ambiguity remains. Ask for review before
   final artwork.
 - Render and inspect final artifacts. A correct editable source is not evidence of a correct export.
+- Give each illustration a specific explanatory job. Judge its relationship with labels and nearby
+  objects at paper size; visual polish and editability alone do not establish communication quality.
 
 ## Route the task
 
@@ -47,6 +50,7 @@ Read only the references required by the task:
 - EBench reference-to-editable-PPTX example: [ebench-case-study.md](references/ebench-case-study.md)
 - Story-first paper hero, Figure 1 simplification, or repeated visual-polish iteration: [story-first-hero.md](references/story-first-hero.md)
 - Generated 2D academic illustrations or icon families: [academic-2d-illustrations.md](references/academic-2d-illustrations.md)
+- Repeated author feedback on layout or unclear icons: [eager-iteration-lessons.md](references/eager-iteration-lessons.md)
 - Sequence, branch, merge, feedback, or long connector: [arrow-topology.md](references/arrow-topology.md)
 - Spec authoring or backend behavior: [figure-spec.md](references/figure-spec.md)
 - Linux/runtime capability or fallback: [linux-portability.md](references/linux-portability.md)
@@ -118,11 +122,11 @@ python scripts/validate_figure_spec.py figure-spec.json --check-assets --require
 Do not suppress a validation error. Resolve warnings that affect scientific meaning, publication
 portability, or final rendering.
 
-### 5. Create and secure vector assets
+### 5. Create explanatory assets and secure vectors
 
-Generate small icons from simple SVG primitives with a consistent viewBox, stroke width, round caps,
-and theme colors. Do not use scripts, `foreignObject`, external URLs, remote fonts, event attributes,
-or embedded HTML.
+When a vector schematic is appropriate, use simple SVG primitives with a consistent viewBox,
+stroke width, round caps, and theme colors. Do not use scripts, `foreignObject`, external URLs,
+remote fonts, event attributes, or embedded HTML.
 
 Sanitize every untrusted or model-authored SVG before insertion:
 
@@ -183,6 +187,9 @@ python scripts/compare_reference.py reference.png rendered.png \
 
 Use [qa-rubric.md](references/qa-rubric.md). Raster similarity cannot approve semantics. Close a
 finding only after inspecting a fresh render of the exact delivered artifact.
+Record specific findings and their resolution rather than using a self-assigned aesthetic score
+as a delivery gate. When manuscript integration is requested, follow the paper-scale and export
+checks in [pptx-figure-hardening.md](references/pptx-figure-hardening.md).
 
 ## Output guarantees and fallbacks
 

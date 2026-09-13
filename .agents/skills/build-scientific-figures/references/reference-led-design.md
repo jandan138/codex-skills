@@ -58,6 +58,19 @@ explicit maintainer authorization, recorded source/license, and a private/public
 Existing bundled screenshots may be used for local visual analysis but do not authorize reuse in a
 new publication.
 
+## Compare the composition, not just the styling
+
+Place the target and relevant reference regions at the same displayed width, then inspect each at
+its intended paper width. Compare hierarchy, image-to-text area, meaningful grouping, object
+relationships, and traceable routes. A generous reference panel cannot justify unreadable detail
+inside a much smaller target panel.
+
+For each useful comparison, record an observed difference and a testable change: for example,
+"the target uses four menu rows; the reference gives two assessments a shared input and enough
+area to depict what is checked." Border color or corner radius is relevant only if it addresses
+the diagnosed problem. Reinspect the revised target without the reference: it must explain its
+own science. Reference similarity and venue prestige are not aesthetic acceptance scores.
+
 ## Acceptance
 
 The final figure should explain the target paper without the references present. Provenance should

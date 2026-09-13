@@ -35,7 +35,8 @@ paths preserve why the result is authorized.
 
 ## Establish visual hierarchy
 
-- Give the paper's distinctive real render or measured plot the largest continuous visual region.
+- Give the mechanism, real scene, or measured plot that best explains the communication job the
+  largest continuous visual region. Evidence photos may be supporting witnesses rather than the hero.
 - Use at most two containment levels in a story hero unless the semantic graph requires more.
 - Avoid making every state, policy, result, and note the same rounded card.
 - Use short labels in the graphic and move prose to the caption.
@@ -44,6 +45,17 @@ paths preserve why the result is authorized.
   collapsed.
 - Vary geometry by semantic class. A request, parser, terminal decision, and evidence frame should
   not all share the same corner radius and border weight.
+
+Outer frames can establish shared titles, alignment, and reading order. Keep or introduce them when
+they clarify groups; remove redundant containment rather than treating all borders as clutter.
+If a side panel looks like a settings menu of tiny icons and long labels, reorganize its content:
+give explanatory diagrams their own area, or show input, processing, and outputs with local links.
+Equal-width assessment plates are one option, not a prescribed final layout.
+
+Shorten labels only after identifying what must remain distinguishable. Family names can replace
+full model configurations when the caption retains versions and conditions. Planned motion,
+observed progress, validity, and outcome must remain distinct even when prose moves to the caption.
+Do not force single-line titles when a deliberate line break gives the diagram useful space.
 
 The bundled reference gallery is under
 `assets/examples/story-first-hero/reference-gallery/`. Read
@@ -85,7 +97,7 @@ When the author says a figure is still unattractive, iterate in this order:
 
 1. **scientific story**: remove duplicate outcomes and competing figure roles;
 2. **reading order**: place inputs, decision, and outcome in causal order;
-3. **containment**: remove unnecessary outer panels and nested card families;
+3. **containment**: clarify useful panel groups and remove redundant nested card families;
 4. **typography**: reduce word count, font-size count, and uniform bolding;
 5. **routing**: replace diagonal fans with named orthogonal paths;
 6. **asset style**: make small icons one coherent family while retaining real evidence as real;
@@ -93,6 +105,16 @@ When the author says a figure is still unattractive, iterate in this order:
 8. **paper-scale QA**: re-render the exact delivered PPTX and the manuscript page.
 
 Do not spend early rounds polishing a graph that still tells the wrong story.
+
+Use this order to diagnose the reported problem, not to redesign every region after each comment.
+Retain approved regions and scientific relationships while fixing the affected part. Record:
+
+`Author observation | suspected cause | change | fresh-render evidence | remaining limitation`
+
+Compare the affected crop and the whole figure after the edit. Continue while concrete problems
+remain; neither a fixed number of rounds nor a high aesthetic self-score establishes completion.
+Do not claim top-conference quality from editability, no overflow, or venue-name comparisons.
+See [eager-iteration-lessons.md](eager-iteration-lessons.md) for a worked diagnosis sequence.
 
 ## Bundled case study and template
 
