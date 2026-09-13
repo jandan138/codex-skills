@@ -1,0 +1,28 @@
+{
+  "case_study": "Illustration-led authority-aware method figure",
+  "verified_on": "2026-09-01",
+  "ownership": "project-owned",
+  "reuse_boundary": "Visual baseline only. Replace scientific labels, topology, task scenes, and claim boundaries before adapting it to another paper.",
+  "claim_boundary": "The illustrations explain semantic and authority-module roles; they are not experimental, policy-safety, or simulator evidence.",
+  "assets": [
+    {
+      "path": "authority-method-case-study.pptx",
+      "role": "editable project-owned method-figure case study",
+      "source": "Genesis-LLM ACL 2027 Figure 2 Round 05 M5",
+      "sha256": "ff322aa1a9f59fe6c4a0d37cc0db9e2101fe9bcdee3f2cf087c4278d935a8516"
+    },
+    {
+      "path": "authority-method-case-study-preview.png",
+      "role": "paper-scale visual baseline",
+      "generated_from": "authority-method-case-study.pptx",
+      "sha256": "7d338c546d6d922674aec1200d887a329f0d461a1110728d593a83ab7558653d"
+    },
+    {
+      "path": "authority-component-atlas.png",
+      "role": "generated 2x2 academic illustration family for policy, compiler, clarification, and rejection",
+      "generator": "Codex built-in image generation",
+      "sha256": "667ca47d555ad4d31aa15e27793bf268c492d5f9ad635e61f5c392cb0e31889e",
+      "reuse_boundary": "Project-owned style reference. Verify semantics and regenerate or redraw components when adapting to a different paper."
+    }
+  ]
+}

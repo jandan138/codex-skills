@@ -235,6 +235,12 @@ in both applications can still reflow labels, crop text, or move connectors.
 For Linux-first reproducibility, approve the SVG/PDF render as the visual ground
 truth and treat PPTX rendering as a compatibility check.
 
+For a deliberately flat native PPTX, inspect both explicit effects and theme style references.
+LibreOffice may render a theme `effectRef` even when the shape contains an empty `effectLst` from a
+shadow-inheritance override. Set `effectRef idx=0`, reopen the saved package, and inspect a fresh
+LibreOffice render. Read `pptx-figure-hardening.md` and run
+`scripts/audit_pptx_figure.py --require-flat`.
+
 ## Headless Linux, containers, and WSL
 
 - LibreOffice is invoked with `--headless` and an isolated temporary user
